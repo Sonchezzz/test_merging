@@ -5,6 +5,7 @@ on:
   pull_request:  
 jobs:
   test:
+    if: github.repository == 'octo-org/octo-repo-prod'
     name: Run Tests
     runs-on: ubuntu-22.04
     env: 
