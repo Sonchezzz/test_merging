@@ -1,0 +1,21 @@
+name: SkorniienkoTest
+on:
+  workflow_dispatch:
+    inputs:
+      bot_name:
+        description: Submodule checkout strategy
+        type: string
+        default: recursive      
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-22.04
+    env: 
+      TEST: ${{ inputs.bot_name }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: "Get latest tag"
+      id: latest_tag
+      run: echo $TEST
