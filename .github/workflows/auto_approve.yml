@@ -1,11 +1,8 @@
 name: SkorniienkoTest
 on:
-  workflow_dispatch:
-    inputs:
-      bot_name:
-        description: Submodule checkout strategy
-        type: string
-        default: recursive      
+  push:
+    branches: [main]
+  pull_request:  
 jobs:
   test:
     name: Run Tests
@@ -18,4 +15,4 @@ jobs:
 
     - name: "Get latest tag"
       id: latest_tag
-      run: echo $TEST
+      run: echo "Hello World"
